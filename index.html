@@ -22,12 +22,17 @@
         <img src="imgs/logo 1.png" alt="">
         <ion-icon name="people"></ion-icon>
     </header>
-    <main></main>
+    <main>
+        <ul>
+            <!-- populado com mensagens do servidor -->
+        </ul>
+    </main>
     <footer>
-        <textarea  placeholder="Escreva aqui..."></textarea>
-        <ion-icon name="paper-plane-outline"></ion-icon>
+        <textarea data-identifier="send-message"  placeholder="Escreva aqui..."></textarea>
+        <ion-icon name="paper-plane-outline" onclick="prepareMessage()"></ion-icon>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="script.js"></script>
 </body>
