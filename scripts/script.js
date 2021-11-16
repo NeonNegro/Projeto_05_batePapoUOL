@@ -29,9 +29,9 @@ function login(){
     setInterval( () => 
     {
       axios.post('https://mock-api.driven.com.br/api/v4/uol/status', {name: user})
-      .then(response =>{console.log(response)
+      .then(response =>{
       })
-      .catch(error =>{console.log(error.response)
+      .catch(error =>{
       });
     }, 5000);
 
@@ -81,7 +81,6 @@ setInterval( function getOnlines(){
       list.innerHTML = liList;
   })
   .catch( error => { 
-    console.log(error.response);
   });
   
   // Essa função 'getOnlines' que retorna ela mesma foi uma forma que encontrei online de passar uma função
@@ -120,9 +119,8 @@ function getMessages(){
 
     });
     
-    console.log(response)
   })
-  .catch(error =>{console.log(error.response); console.log(error)
+  .catch(error =>{
   });
 }
 
