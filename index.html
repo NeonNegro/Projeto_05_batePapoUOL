@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
@@ -18,22 +18,62 @@
 
 </head>
 <body>
-    <header>
+    <div class="login">
         <img src="imgs/logo 1.png" alt="">
-        <ion-icon name="people"></ion-icon>
+        <div class="container">
+            <input class="user-name" data-identifier="enter-name" placeholder="Digite seu nome" type="text">
+            <span class='user-name-error'></span>
+
+            <img class="hidden" src="imgs/loading.gif" alt="">
+            <span class="&nbsp&nbsp loading hidden">Entrando... </span>
+        </div>
+        <button  data-identifier="start" onclick="login()">Entrar</button>
+        
+    </div>
+    <header class="hidden">
+        <img src="imgs/logo 1.png" alt="">
+        <ion-icon name="people" onclick="openLateral()"></ion-icon>
     </header>
-    <main>
+    <main class= "hidden">
         <ul>
             <!-- populado com mensagens do servidor -->
         </ul>
     </main>
-    <footer>
-        <textarea data-identifier="send-message"  placeholder="Escreva aqui..."></textarea>
-        <ion-icon name="paper-plane-outline" onclick="prepareMessage()"></ion-icon>
+    <aside>
+        <div class="side-top">
+            <strong>Escolha um contato <br/> para enviar mensagem:</strong>
+        </div>
+        <ul class="user-list">
+                        <!-- populado com lista de usuários-->
+        </ul>
+        <div class="side-bottom">
+            <strong>Escolha a visibilidade:</strong>
+        </div>
+        <ul class="privacy-list">
+            <li class="publi-option" onclick= selectPrivacy(this) >
+                <ion-icon name="lock-open"></ion-icon>
+                 Público 
+                <img class="selected" src="imgs/ve.png" alt=""> 
+            </li>
+            <li class="reser-option" onclick= selectPrivacy(this) >
+                <ion-icon name="lock-closed"></ion-icon>
+                 Reservadamente 
+                <img src="imgs/ve.png" alt=""> 
+            </li>
+        </ul>
+        
+    </aside>
+    <footer class= "hidden">
+        <textarea placeholder="Escreva aqui..."></textarea>
+        <ion-icon data-identifier="send-message" name="paper-plane-outline" onclick="prepareMessage()"></ion-icon>
+        <span class='to-whom'>Enviando mensagem para todos</span>
     </footer>
+
+    <div class="grayBack" onclick="closeLateral()"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/utils.js"></script>
 </body>
 </html>
