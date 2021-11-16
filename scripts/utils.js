@@ -29,7 +29,7 @@ document.querySelector('textarea').addEventListener('input', () => {
 document.querySelector("textarea").addEventListener("keypress", submitOnEnter);
 
 function submitOnEnter(e){
-    if(e.which === 13 && !e.shiftKey) {
+    if(e.key === 'Enter') {
         e.preventDefault();
         
         let message = e.currentTarget.value;
